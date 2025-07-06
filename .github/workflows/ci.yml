@@ -7,6 +7,7 @@ jobs:
            - uses: actions/checkout@v4.1.1
 
            - name: Run my own composite action
+
              id: my-action
              uses: ./
              with:
