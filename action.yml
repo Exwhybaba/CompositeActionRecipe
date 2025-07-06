@@ -1,5 +1,5 @@
 name: 'Composite Action Recipe'
-description: 'greet the user and return 42'
+description: 'Greets the user and returns 42.'
 inputs:
   who-to-greet:
     description: 'who to greet'
