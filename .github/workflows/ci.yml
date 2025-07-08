@@ -1,22 +1,22 @@
 name: CI Workflow
+
 on: 
   push:
   pull_request:
   issues:
     types: [opened]
 
-
-
 jobs:
-    ci-job:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v4.1.1
-            - name: Run my own composite action
-              id: my-action
-              uses: ./
-              with:
-                who-to-greet: '@Exwhybaba'
+  ci-job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4.1.1
 
-            - name: Output the answer
-              run: echo "The answer is ${{ steps.my-action.outputs.answer }}"
+      - name: Run my own composite action
+        id: my-action
+        uses: ./.github/actions/my-action
+        with:
+          who-to-greet: '@Exwhybaba'
+
+      - name: Output the answer
+        run: echo "The answer is ${{ steps.my-action.outputs.answer }}"
