@@ -14,7 +14,7 @@ jobs:
 
       - name: Run my own composite action
         id: my-action
-        uses: ./.github/actions/my-action
+        uses: ./
         with:
           who-to-greet: '@Exwhybaba'
 
